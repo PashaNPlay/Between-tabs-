@@ -7,14 +7,13 @@ import java.util.ArrayList;
 public class Solution {
     public static String getPartOfString(String string) throws TooShortStringException {
         if (string == null) throw new TooShortStringException();
-        if (string.indexOf('\t', string.indexOf('\t') + 1) != -1) {
-            return string.split("\t")[1];
-        }
+        int beginIndex = string.indexOf('\t') + 1;
+        int endIndex = string.indexOf('\t', beginIndex);
+        if (endIndex != -1) return string.substring(beginIndex, endIndex);
         throw new TooShortStringException();
     }
 
     public static class TooShortStringException extends Exception {
-    
     }
 
     public static void main(String[] args) throws TooShortStringException {
