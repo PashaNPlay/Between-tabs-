@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Solution {
     public static String getPartOfString(String string) throws TooShortStringException {
         if (string == null) throw new TooShortStringException();
-        if (string.replaceFirst("\t", "").contains("\t")) {
+        if (string.indexOf('\t', string.indexOf('\t')) != -1) {
             return string.split("\t")[1];
         }
         throw new TooShortStringException();
